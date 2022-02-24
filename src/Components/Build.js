@@ -1,16 +1,16 @@
 import styled from 'styled-components'
-const Build = ({course, price, date, direc})=>{
+import Date from '../Components/Smallcomponents/date'
+import Course from '../Components/Smallcomponents/course'
+import Price from '../Components/Smallcomponents/price'
+
+const Build = ({direc, date, course, price})=>{
     return(
         <div>
             <Container>
                 <Wrapper direc={direc}>
-                    <Datebox>
-                        {date}
-                    </Datebox>
-                        <p>{course}
-                        <Buy>Buy Course</Buy>
-                        </p>
-                        <h2>{price}</h2>
+                    <Date date={date}/>
+                    <Course course={course}/>
+                    <Price price={price}/>
                 </Wrapper>
             </Container>
         </div>
@@ -36,39 +36,4 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 flex-direction: ${({direc})=> direc};
-
-p{
-    color: black;
-    font-size: 30px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-}
-
-h2{
-    color: green;
-    margin: 20px;
-}
-`
-const Datebox = styled.button`
-width: 200px;
-height: 200px;
-background: black;
-color: white;
-font-size: 35px;
-outline: none;
-border:  none;
-border-radius: 10px;
-margin: 0px 20px 0px 20px
-`
-const Buy = styled.button`
-width: 150px;
-height: 50px;
-font-size: 20px;
-color: black;
-background: white;
-outline: none;
-border: 1px solid;
-border-radius: 10px;
-margin-top: 20px;
 `
